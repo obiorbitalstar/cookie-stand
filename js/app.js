@@ -1,6 +1,15 @@
 'use strict'
 var workingHours = ['6:00AM', '7:00AM', '8:00AM', '9:00AM', '10:00AM', '11:00AM', '12:00PM', '1:00PM', '2:00PM', '3:00PM', '4:00PM', '5:00PM', '6:00PM', '7:00PM', '8:00PM'];
 
+var  contaner = document.getElementById('sales');
+  var  article1 = document.createElement('article');
+  contaner.appendChild(article1);
+   var salesResule = document.createElement('table');
+contaner.appendChild(salesResule);
+var tr1 = document.createElement('tr');
+salesResule.appendChild(tr1);
+var myCookies = document.createElement('th');
+        tr1.appendChild(myCookies);
 
 function City (name,avgCoockies,customers,cookiesSold,total,minCus,maxCus){
     this.name=name;
@@ -24,51 +33,85 @@ function City (name,avgCoockies,customers,cookiesSold,total,minCus,maxCus){
     console.log(this.cookiesSold);
     console.log(this.total);
     
-    return this.total, this.cookiesSold
+    return this.total, this.cookiesSold;
     
     
 }
+ City.prototype.tableHeader= function() { 
+   
+            myCookies.textContent = "          ";
+    for (let i = 0; i < workingHours.length ; i++){
+             myCookies = document.createElement('th');
+            tr1.appendChild(myCookies);
+            myCookies.textContent = workingHours[i] ;
+          }
+          myCookies = document.createElement('th');
+          tr1.appendChild(myCookies);
+          myCookies.textContent = "Daily location total";
+ 
+ }
 
 
 City.prototype.render=function (){
-    var nations = new Array();
-    nations.push(['6:00AM', '7:00AM', '8:00AM', '9:00AM', '10:00AM', '11:00AM', '12:00PM', '1:00PM', '2:00PM', '3:00PM', '4:00PM', '5:00PM', '6:00PM', '7:00PM', '8:00PM']);
-    nations.push(["Seattle",6.3,[],[],0,23,65]);
-    nations.push(["Tokyo",1.3,[],[],0,3,24]);
-    nations.push(["Dubai",3.7,[],[],0,4,38]);
-    nations.push(["Paris",4.7,[],[],0,6,38]);
-    nations.push(["Lima",6.3,[],[],0,23,65]);
-    var table = document.createElement("TABLE");
-    table.border = "1";
 
-    //Get the count of columns.
-    var columnCount = nations[0].length;
-
-    //Add the header row.
-    var row = table.insertRow(-1);
-    for (var i = 0; i < columnCount; i++) {
-        var headerCell = document.createElement("TH");
-        headerCell.innerHTML = nations[0][i];
-        row.appendChild(headerCell);
-    }
-
-    //Add the data rows.
-    for (var i = 1; i < nations.length; i++) {
-        row = table.insertRow(-1);
-        for (var j = 0; j < columnCount; j++) {
-            var cell = row.insertCell(-1);
-            cell.innerHTML = nations[i][j];
-        }
-    }
-
-    var dvTable = document.getElementById("dvTable");
-    dvTable.innerHTML = "";
-    dvTable.appendChild(table);
+var tr2 = document.createElement('tr');
+salesResule.appendChild(tr2);
+var myCookies = document.createElement('td');
+        tr2.appendChild(myCookies);
+        myCookies.textContent = this.name;
+for (let  i = 0; i < workingHours.length ; i++){
+         myCookies = document.createElement('td');
+        tr2.appendChild(myCookies);
+        myCookies.textContent = this.cookiesSold[i] ;
+      }
+      myCookies = document.createElement('td');
+      tr2.appendChild(myCookies);
+      myCookies.textContent = `${this.total}`;
  }
-//  name,avgCoockies,customers,cookiesSold,total,minCus,maxCus
 
-document.write(` <input type="button" value="Generate Table" onclick="${City.prototype.render();}" />`)
 
+
+ City.prototype.totalsOfTotals= function() { 
+var tr3 = document.createElement('tr');
+salesResule.appendChild(tr3); 
+var myCookies = document.createElement('td');
+        tr3.appendChild(myCookies);
+        myCookies.textContent ='Total';
+        var totalOfTotals = 0 ; 
+for (let  i = 0; i < workingHours.length ; i++){
+    var colSum = 0 ; 
+    for (let j = 0; j < nations.length; j++) {
+        
+       colSum    +=  nations[j].cookiesSold[i];
+        
+    }
+    totalOfTotals += colSum;
+    myCookies=document.createElement('td');
+    tr3.appendChild(myCookies); 
+    myCookies.innerHTML=colSum ;
+
+
+      }
+     myCookies=document.createElement('td'); 
+     tr3.appendChild(myCookies);
+     myCookies.textContent= totalOfTotals;
+ }
+
+var seattle = new City ('Seattle',6.3,[],[],0,23,65);
+var tokyo = new City("Tokyo",1.3,[],[],0,3,24);
+var dubai = new City("Dubai",3.7,[],[],0,4,38);
+var paris = new City ("Paris",4.7,[],[],0,6,38);
+var lima = new City("Lima",6.3,[],[],0,23,65);
+
+var nations = [seattle,tokyo,dubai,paris,lima]; 
+City.prototype.tableHeader();
+
+for (let i = 0; i < nations.length; i++) {
+    nations[i].cusCount(); 
+    nations[i].render(); 
+    console.log(nations[i]);
+}
+City.prototype.totalsOfTotals();
 
 // var seattle = {
 //     name: 'Seattle',

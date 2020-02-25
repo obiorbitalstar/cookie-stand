@@ -29,13 +29,15 @@ table
     border-collapse: collapse;
 }
 table th
-{
+{ 
+   
     background-color: #F7F7F7;
     color: #333;
     font-weight: bold;
 }
 table th, table td
-{
+{ 
+    border:solid;
     padding: 5px;
     border-color: #ccc;
 }
