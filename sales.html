@@ -1,19 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Sales page</title>
     <link rel="stylesheet" href="css/reset.css">
-    <link href="https://fonts.googleapis.com/css?family=Akronim&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+
+
+    <link rel="stylesheet" href="css/salesStyle.css">
+    <link href="//fonts.googleapis.com/css?family=Akronim&display=swap" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Monoton&display=swap" rel="stylesheet">
 </head>
-<body >
-    <img src="img/salmon.png" alt="fish">
-    <h1> National sales :
-    </h1>
-    <div id="sales"></div> 
-   
+
+<body>
+    <header>
+        <img src="img/salmon.png" alt="fish">
+
+        <fieldset>
+            <form id= "newInfo">
+                <legend>New shop information </legend>
+                <label for="location">Location</label>
+                <input type="text" id="location">
+                <br>
+                <label for="minCustomers">max number of customers</label>
+                <input type="text" id="minCustomers">
+                <br>
+                <label for="maxCustomers">max number of customers</label>
+                <input type="text" id="maxCustomers">
+                <br>
+                <label for="coockieAvg">Avg of coockies per hour</label>
+                <input type="text" id="coockieAvg">
+                <br>
+                <input type="submit" value="Submit">
+
+
+            </form>
+            </fieldset>
+        <h1 id="nationalSales"> Natinoal Sales: </h1>
+    </header>
+
+
+    <body>
+        <div id="sales"></div>
+
+    </body>
+
+
+
     <script src="js/app.js"></script>
 </body>
+
 </html>

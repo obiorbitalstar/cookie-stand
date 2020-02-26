@@ -33,8 +33,8 @@ body{
 }
 #About{
     /* background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQxZAEYdHXmnUYIu0zZdVIg8cQIGPxmRviuClufJISBGD2nqibB); */
+    
    background: url(https://robertehill.github.io/cookie-stand-REH/img/3.jpg);
-
     height: 450px;
     text-align: center;
     color: #fff;
@@ -81,3 +81,4 @@ body{
 #Contact p {
     color: #fff;
 }
+

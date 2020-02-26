@@ -111,5 +111,46 @@ for (let i = 0; i < nations.length; i++) {
     nations[i].render(); 
     console.log(nations[i]);
 }
+
+var infoForm = document.getElementById("newInfo") ; 
+console.log(infoForm);
+
+infoForm.addEventListener('submit',function(event){
+    console.log(event);
+    event.preventDefault();
+var location =event.target.location.value; 
+var minCustomer = event.target.minCustomers.value;
+var maxCustomers = event.target.maxCustomers.value; 
+var coockieAvg = event.target.coockieAvg.value ; 
+
+var addLoc = new City (location,parseFloat(coockieAvg),[],[],0,parseInt(minCustomer),parseInt(maxCustomers));
+addLoc.cusCount(); 
+var tr3 = document.createElement('tr');
+
+salesResule.appendChild(tr3);
+var myCookies = document.createElement('td');
+        tr3.appendChild(myCookies);
+ 
+       //  salesResule.insertRow(5);
+     // var end = salesResule.rows.length() ;
+    // salesResule.insertBefore(tr2,tr);    
+        myCookies.textContent = addLoc.name;
+for (let  i = 0; i < workingHours.length ; i++){
+         myCookies = document.createElement('td');
+        tr3.appendChild(myCookies);
+        myCookies.textContent = addLoc.cookiesSold[i] ;
+      }
+      myCookies = document.createElement('td');
+      tr3.appendChild(myCookies);
+      myCookies.textContent = `${addLoc.total}`;
+      console.log(coockieAvg);
+      console.log(addLoc);
+// name,avgCoockies,customers,cookiesSold,total,minCus,maxCus
+
+
+});
+
+console.log(infoForm);
+
 City.prototype.totalsOfTotals();
 
