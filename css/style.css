@@ -1,43 +1,83 @@
-p{
-    text-align: center;
+@import url('https://fonts.googleapis.com/css?family=Quicksand:400,500,700&display=swap');
+body{
+    font-family: 'Quicksand', sans-serif;
+    font-size:20px
+}
+
+.my-header {
+    background-color: #5b0289;
+    color: #fff;
+    padding: 20px;
+    height: 30px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+}
+.my-header h1{
     float: left;
-    padding: 25px;
-    border: 15px solid green;
-     color: indigo;
-     background-color: cadetblue;
-  margin: 10px;
-                           
 }
 
-p ul li {
-    margin: 5px;
+.my-header nav{
+    float: right;
+    padding: 0 30px;
 }
-img{
- border-image-width: auto;
- margin-left: 250px;
+.my-header nav ul li{
+    display: inline-block;
+    padding: 0 12px;
+    text-transform: uppercase;
+    font-size: 15px;
+}
+.my-header nav ul li a{
+    color: #fff;
+    text-decoration: none;
+}
+#About{
+    /* background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQxZAEYdHXmnUYIu0zZdVIg8cQIGPxmRviuClufJISBGD2nqibB); */
+   background: url(https://robertehill.github.io/cookie-stand-REH/img/3.jpg);
+
+    height: 450px;
+    text-align: center;
+    color: #fff;
+    background-size: cover;  /* to cover the entire container, */
+    background-repeat: no-repeat;
+    padding: 0 50px;
 }
 
-h1{
- font-size: 100px;
- text-align: center;
- font-family: 'Akronim';
- padding: 50px;
+#About h2{
+    padding-top: 180px;
+    font-weight: 600;
+    font-size: 30px;
+    margin-bottom: 16px;
 }
-table
-{
-    border: 1px solid #ccc;
-    border-collapse: collapse;
+.program-list {
+    width: 16%;
+    /* display: inline-block; */
+    float: left;
+    background: #ffebef;
+    height: 100px;
+    margin-top: 40px;
+    padding: 35px 15px;
+    margin-right: 0.2%;
+    text-align: center;
 }
-table th
-{ 
-   
-    background-color: #F7F7F7;
-    color: #333;
+#Program {
+    padding: 60px 25px 0;
+    height: 360px;
+}
+.program-list  h3{
+    line-height: 1.2;
+}
+.text-center{
+    text-align: center;
+}
+.font-bold{
     font-weight: bold;
 }
-table th, table td
-{ 
-    border:solid;
-    padding: 5px;
-    border-color: #ccc;
+#Contact{
+    background-color: #5b0289;
+    padding: 25px;
+}
+
+#Contact p {
+    color: #fff;
 }
