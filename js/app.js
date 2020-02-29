@@ -133,7 +133,7 @@ var myCookies = document.createElement('td');
  
        //  salesResule.insertRow(5);
      // var end = salesResule.rows.length() ;
-    // salesResule.insertBefore(tr2,tr);    
+    // salesResule.insertBefore(tr2,tr3);    
         myCookies.textContent = addLoc.name;
 for (let  i = 0; i < workingHours.length ; i++){
          myCookies = document.createElement('td');
